@@ -186,7 +186,7 @@
   $_hilight_color: _button_hilight_color($c);
   $_button_edge: if($edge == none, none, _widget_edge($edge));
   $_blank_edge: if($edge == none, none, _widget_edge(transparentize($edge,1)));
-  $_button_shadow: 0 1px 2px transparentize($shadow_color, 0.03);
+  $_button_shadow: 0px 1px 0px transparentize($shadow_color, 0.03);
 
   @if $t==normal {
   //
@@ -195,10 +195,7 @@
     color: $tc;
     outline-color: transparentize($tc, 0.7);
     border-color: if($c != $bg_color, _border_color($c), $borders_color);
-    border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
-    $button_fill: if($variant == 'light', linear-gradient(to top, darken($c, 4%) 2px, $c),
-                                          linear-gradient(to top, darken($c,1%) 2px, $c)) !global;
-    background-image: $button_fill;
+    background-color: if($variant == 'light', darken($c, 2%), darken($c,1%));
     @include _button_text_shadow($tc, $c);
     @include _shadows(inset 0 1px $_hilight_color, $_button_edge, $_button_shadow);
   }
@@ -631,4 +628,3 @@
     color: transparentize($tc, 0.3);
   }
 }
-

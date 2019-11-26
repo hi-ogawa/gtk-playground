@@ -6,6 +6,10 @@
 
 $variant: 'light';
 
+* {
+  all: unset;
+}
+
 @import 'colors';
 @import 'drawing';
 @import 'common';

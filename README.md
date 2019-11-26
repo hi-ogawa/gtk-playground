@@ -2,13 +2,13 @@ Pick up a few nice files from upstream.
 cf. https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo
 
 ```
-mkdir -p thirdparty/gtk/demos/widget-factory
+mkdir -p thirdparty/gtk/demos
 mkdir -p thirdparty/gtk/gtk
 mkdir -p thirdparty/gnome-shell/data
 
 svn export \
-  https://github.com/GNOME/gtk/branches/gtk-3-24/demos/widget-factory/widget-factory.ui \
-  thirdparty/gtk/demos/widget-factory/widget-factory.ui
+  https://github.com/GNOME/gtk/branches/gtk-3-24/demos/widget-factory \
+  thirdparty/gtk/demos/widget-factory
 
 svn export \
   https://github.com/GNOME/gtk/branches/gtk-3-24/gtk/theme \
@@ -18,6 +18,29 @@ svn export \
   https://github.com/GNOME/gnome-shell/branches/gnome-3-34/data/theme \
   thirdparty/gnome-shell/data/theme
 ```
+
+
+GTK style development
+
+```
+# Setup auto compilation (from one console)
+mkdir -p build
+inotifywait -mr -e close_write src/theme/gtk/theme/Adwaita | \
+  xargs -I x sh -c 'echo ":: INOTIFY - x"; sassc src/theme/gtk/theme/Adwaita/gtk-contained.scss build/dev.css'
+
+
+# Preview style from Glade (it supports auto-reloading css file + helpful css error message)
+glade src/ui/widget-factory.ui
+
+
+# Apply system wide
+mkdir -p dist/CustomAdwaita/gtk-3.0
+mkdir -p $HOME/.local/share/themes
+sassc src/theme/gtk/theme/Adwaita/gtk-contained.scss dist/CustomAdwaita/gtk-3.0/gtk.css
+ln -sf $PWD/dist/CustomAdwaita $HOME/.local/share/themes
+gsettings set org.gnome.desktop.interface gtk-theme 'CustomAdwaita'
+```
+
 
 TODO
 
@@ -50,6 +73,7 @@ glade widget-factory.ui
     - button outline
   - button
     - no gradient
+  - everywhere non-bold font (menubar, popup)
   - menubar
     - decrease font-weight
     - decrease padding
@@ -82,12 +106,13 @@ gsettings set org.gnome.desktop.interface font-name 'Roboto 11'
 References
 
 - gtk theme
-  -
-- gnome theme
-  -
+  - org.gnome.desktop.interface gtk-theme
+- Gnome theme
+  - https://gitlab.gnome.org/GNOME/gnome-shell-extensions/tree/master/extensions/user-theme
+  - org.gnome.shell.extensions.user-theme name
 - widget factory
   -
-- sass
+- SASS
   - https://sass-lang.com/
   - https://github.com/sass/libsass/blob/master/src/ast_values.cpp
   - https://github.com/sass/libsass/blob/master/src/fn_colors.cpp

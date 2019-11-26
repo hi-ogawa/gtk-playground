@@ -1,5 +1,9 @@
-Pick up a few nice files from upstream.
-cf. https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo
+CustomAdwaita theme
+
+![Screenshot](images/screenshot.png)
+
+
+Pick up a few nice files from upstream (cf. https://stackoverflow.com/questions/7106012/download-a-single-folder-or-directory-from-a-github-repo)
 
 ```
 mkdir -p thirdparty/gtk/demos
@@ -43,30 +47,30 @@ bash scripts.sh gnome install
 Main changes
 
 - Everywhere lighter
-  - [*] text
-  - [*] background
-  - [*] border
-  - [*] shadow
-  - [*] lighter blue
+  - [x] text
+  - [x] background
+  - [x] border
+  - [x] shadow
+  - [x] lighter blue
   - [ ] tweak border color (currently some border disappers)
-- [*] Decrease border radius entirely
+- [x] Decrease border radius entirely
 - Menubar
-  - [*] decrease padding
-  - [*] upper border radius
-  - [*] lighter background color
-  - [*] decrease titlebar font-weight
+  - [x] decrease padding
+  - [x] upper border radius
+  - [x] lighter background color
+  - [x] decrease titlebar font-weight
   - [ ] better sizing
 - Window
-  - [*] lighter shadow
+  - [x] lighter shadow
 - Button
-  - [*] no gradient
+  - [x] no gradient
   - [ ] better toggle button enbled-state
 - Popup
-  - [*] shadow
+  - [x] shadow
 - Gnome
-  - [*] Decrease border radius
+  - [x] Decrease border radius
     - [ ] Cannot change topbar popup's border radius?
-  - [*] Change font
+  - [x] Change font
   - [ ] change gdm greater font
 
 

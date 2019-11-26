@@ -34,6 +34,9 @@ glade src/ui/widget-factory.ui
 
 # Apply system wide (I experienced gnome-shell crashed when running this. So use this with care...)
 bash scripts.sh install
+
+# Install gnome-shell theme
+bash scripts.sh gnome install
 ```
 
 
@@ -61,8 +64,9 @@ Main changes
 - Popup
   - [*] shadow
 - Gnome
-  - [@] user theme authoring
-  - [ ] Decrease "screen" border radius
+  - [*] Decrease border radius
+    - [ ] Cannot change topbar popup's border radius?
+  - [*] Change font
   - [ ] change gdm greater font
 
 

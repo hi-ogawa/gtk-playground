@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="main">
+    <property name="orientation">horizontal</property>
+    <property name="margin">10</property>
+    <property name="spacing">10</property>
+
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
+
+        <child>
+          <object class="GtkEntry" id="ui-file">
+            <property name="placeholder-text">UI File Name</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkEntry" id="object-id">
+            <property name="placeholder-text">Object ID</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkButton" id="ui-load">
+            <property name="label">Load</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkCheckButton" id="auto-reload">
+            <property name="label">Enable auto-reload</property>
+          </object>
+        </child>
+
+        <!-- TODO: show error/warning message -->
+        <child>
+          <object class="GtkLabel" id="ui-message">
+            <property name="label"></property>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkSeparator">
+        <property name="orientation">vertical</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkBox" id="sub-main">
+        <property name="orientation">horizontal</property>
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="margin">5</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="vexpand">True</property>
+                <property name="hexpand">True</property>
+                <property name="label">UI File is not loaded.</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

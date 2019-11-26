@@ -1,0 +1,12 @@
+/ Generate ui file by
+/ $ slimrb -p gtkmm/ui_example_sub.slim > gtkmm/ui_example_sub.ui
+
+doctype xml
+interface
+  object.GtkBox#example
+    property name="orientation" horizontal
+    child
+      object.GtkLabel
+        property name="vexpand" True
+        property name="hexpand" True
+        property name="label" Hello World

@@ -1,0 +1,6 @@
+@import url("style_example_reset.css");
+
+button {
+  color: #ff0000;
+  margin: 10px;
+}

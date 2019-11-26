@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkWindow" id="root">
+    <signal name="destroy" handler="onDestroy" swapped="no"/>
+    <child>
+      <object class="GtkButton">
+        <property name="label">Click Me!</property>
+        <signal name="pressed" handler="onButtonPressed" swapped="no"/>
+      </object>
+    </child>
+  </object>
+</interface>

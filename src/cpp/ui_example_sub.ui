@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<interface><object class="GtkBox" id="example"><property name="orientation">horizontal</property><child><object class="GtkLabel"><property name="vexpand">True</property><property name="hexpand">True</property><property name="label">Hello World</property></object></child></object></interface>
